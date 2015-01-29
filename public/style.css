@@ -102,3 +102,18 @@ body{
 	font-size: 30px;
 	font-family: 'Lato', sans-serif;
 }
+
+/* unvisited link */
+a:link {
+    color: white;
+}
+
+/* visited link */
+a:visited {
+    color: gray;
+}
+
+a{
+	text-decoration: none;
+}
+
