@@ -6,7 +6,8 @@ $(document).ready(function(){
 	$('.img1').click(function(){
 		$('#box2, #box3, #box4, #box5, #box6, #box7, #box8, #box9').addClass('animated fadeOut'),
 		$('.covervid-wrapper').removeClass("hidden"),
-		$(".vid > p").replaceWith("<iframe width='100%' height='100%'  class='cover-vid-video' src='//www.youtube.com/embed/IR-l_TSjlEo?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>").fadeIn(900),
+		aboutMe(),
+		// $(".vid > p").replaceWith("<iframe width='100%' height='100%'  class='cover-vid-video' src='//www.youtube.com/embed/IR-l_TSjlEo?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>").fadeIn(900),
 		$('.arrow').removeClass("hidden");
 	});
 
@@ -34,7 +35,8 @@ $(document).ready(function(){
 	$('.img4, .img5, .img6').click(function(){
 			$('#box1, #box2, #box3, #box7, #box8, #box9').addClass('animated fadeOut'),
 		$('.covervid-wrapper').removeClass("hidden"),
-		$(".vid > p").replaceWith("<iframe width='100%' height='100%' class='cover-vid-video' src='//www.youtube.com/embed/OwCatikaHNM?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>").fadeIn(900),
+		// $(".vid > p").replaceWith("<iframe width='100%' height='100%' class='cover-vid-video' src='//www.youtube.com/embed/OwCatikaHNM?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>").fadeIn(900),
+		projects(),
 		$('.arrow').removeClass("hidden");
 		
 	});
@@ -49,7 +51,8 @@ $(document).ready(function(){
 	$('.img7, .img8').click(function(){
 			$('#box1, #box2, #box3, #box4, #box5, #box6, #box9').addClass('animated fadeOut'),
 		$('.covervid-wrapper').removeClass("hidden"),
-		$(".vid > p").replaceWith("<iframe width='100%' height='100%' class='cover-vid-video' src='//www.youtube.com/embed/poDO86TgXPA?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>").fadeIn(900),
+		// $(".vid > p").replaceWith("<iframe width='100%' height='100%' class='cover-vid-video' src='//www.youtube.com/embed/poDO86TgXPA?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>").fadeIn(900),
+		contact(),
 		$('.arrow').removeClass("hidden");
 		
 	});
@@ -85,6 +88,41 @@ $(document).ready(function(){
 		txt.removeClass('animated fadeIn fadeOut');
 	};
 
-	$('.arrow').click(function(){
-		location.reload();
+
+projects = function(){
+	$.ajax({
+		url:"/projects",
+		type: "GET",
+		dataType: "html",
+		success: function(data){
+			$("#box4, #box5, #box6").addClass('animated fadeOut')
+			$("body").replaceWith(data);
+			
+		}
 	});
+};
+	
+aboutMe = function(){
+	$.ajax({
+		url:"/aboutme",
+		type:"GET",
+		dataType: "html",
+		success: function(data){
+			$(".diamond").replaceWith(data);
+			$("#box1").addClass('animated fadeOut');
+		}
+	});
+}	
+
+contact = function(){
+	$.ajax({
+		url:"/contact",
+		type:"GET",
+		dataType: "html",
+		success: function(data){
+			$(".diamond").replaceWith(data);
+			$("#box7, #box8").addClass('animated fadeOut');
+		}
+	});
+};
+

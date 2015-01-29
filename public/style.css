@@ -1,11 +1,21 @@
-body{
+html{
 	background-color: black;
 	color: white;
+}
+
+.pure-g [class *= "pure-u"] {
+    /* Set your content font stack here: */
+    font-family: 'Lato', sans-serif;
+}
+
+body{
+/*	background-color: black;
+	color: white;*/
 	display: flex;
 	justify-content: center;
 }
 
-.diamond h1{
+ h1{
 	text-align: center;
 	font-size: 100px;
 	font-family: 'Lato', sans-serif;
@@ -72,17 +82,23 @@ body{
     z-index: 200
 }
 
-.header{
+.reload{
 	position: absolute;
 	margin-top: 25px;
-	padding-left: 20px;
-	margin-right: 0px;
-	width: 100%;
-	z-index: 999;
-	
+	float: left;
+/*	padding-left: 20px;
+	margin-right: 0px;*/
+/*	width: 100%;*/
+	z-index: 999;	
 }
 
-/*.box1{
-	animation-delay: 300s;
+.description{
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.5);
+	margin-top: -160px;
+	padding: 10px 0;
+	padding-left: 20px;
+	/*width: 800px;*/
+	font-size: 30px;
+	font-family: 'Lato', sans-serif;
 }
-*/

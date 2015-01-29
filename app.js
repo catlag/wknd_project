@@ -21,7 +21,17 @@ app.get('/', function(req,res){
   res.render('index');
 });
 
+app.get('/projects', function(req,res){
+  res.render('projects');
+});
 
+app.get('/aboutme', function(req,res){
+  res.render('aboutme');
+});
+
+app.get('/contact', function(req,res){
+  res.render('contact');
+});
 
 
 
