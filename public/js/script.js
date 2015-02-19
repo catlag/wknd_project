@@ -20,9 +20,11 @@ $(document).ready(function(){
 
 	$('.img2, .img3').click(function(){
 			$('#box1, #box4, #box5, #box6, #box7, #box8, #box9').addClass('animated fadeOut'),
-		$('.covervid-wrapper').removeClass("hidden"),
-		$(".vid > p").replaceWith("<iframe width='100%' height='100%' class='cover-vid-video' src='//www.youtube.com/embed/ZrXrZ5iiR0o?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>").fadeIn(900),
-		$('.arrow').removeClass("hidden");	
+		// $('.covervid-wrapper').removeClass("hidden"),
+		// $(".vid > p").replaceWith("<iframe width='100%' height='100%' class='cover-vid-video' src='//www.youtube.com/embed/ZrXrZ5iiR0o?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>").fadeIn(900),
+		// $('.arrow').removeClass("hidden");
+		window.location = "https://medium.com/@lindamartinez";
+
 	});
 
 		$('.img2, .img3').mouseenter(function(){
@@ -67,7 +69,7 @@ $(document).ready(function(){
 	$('.img9').click(function(){
 			$('#box1, #box2, #box3, #box4, #box5, #box6, #box7, #box8').addClass('animated fadeOut'),
 		$('.covervid-wrapper').removeClass("hidden"),
-		$(".vid > p").replaceWith("<iframe width='100%' height='100%' class='cover-vid-video' src='//www.youtube.com/embed/cIpD7V4cG9c?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>").fadeIn(900),
+		experience();
 		$('.arrow').removeClass("hidden");
 		
 	});
@@ -108,11 +110,11 @@ aboutMe = function(){
 		type:"GET",
 		dataType: "html",
 		success: function(data){
-			$(".diamond").replaceWith(data);
 			$("#box1").addClass('animated fadeOut');
+			$("body").replaceWith(data);
 		}
 	});
-}	
+};
 
 contact = function(){
 	$.ajax({
@@ -120,9 +122,32 @@ contact = function(){
 		type:"GET",
 		dataType: "html",
 		success: function(data){
-			$(".diamond").replaceWith(data);
 			$("#box7, #box8").addClass('animated fadeOut');
+			$("body").replaceWith(data);
 		}
 	});
+};
+
+experience = function(){
+	$.ajax({
+		url:"/experience",
+		type:"GET",
+		dataType: "html",
+		success: function(data){
+			$("#box9").addClass('animated fadeOut');
+			$("#text").replaceWith(data);
+			
+				
+		}
+	}).done(function(){
+				console.log("ummrun?");
+				$.getScript("js/experience-chart.js", function(data, status, jqxhr){
+					console.log( data ); // Data returned
+				  console.log( jqxhr.status ); // 200
+				  console.log( "Load was performed." );
+				});
+			}
+		)
+	;
 };
 

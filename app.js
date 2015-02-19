@@ -33,6 +33,9 @@ app.get('/contact', function(req,res){
   res.render('contact');
 });
 
+app.get('/experience', function(req,res){
+  res.render('experience');
+});
 
 
 app.get('*', function(req,res){
