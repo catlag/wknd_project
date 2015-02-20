@@ -1,13 +1,7 @@
-$(document).ready(function(){
-	alert("ready");
-});
 
-$(window).load(function(){
-  alert("window loaded");
-});
 // $(window).load(function(){
-var width = 500,
-    height = 500,
+var width = 900,
+    height = 900,
     radius = Math.min(width, height) / 2,
     innerRadius = 0.3 * radius;
 
@@ -61,7 +55,7 @@ d3.csv('experience.csv', function(error, data) {
     .enter().append("path")
       .attr("fill", function(d) { return d.data.color; })
       .attr("class", "solidArc")
-      .attr("stroke", "gray")
+      .attr("stroke", "black")
       .attr("d", arc)
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide);
@@ -70,26 +64,21 @@ d3.csv('experience.csv', function(error, data) {
       .data(pie(data))
     .enter().append("path")
       .attr("fill", "none")
-      .attr("stroke", "gray")
+      .attr("stroke", "black")
       .attr("class", "outlineArc")
       .attr("d", outlineArc);  
 
 
   // calculate the weighted mean score
   var score = 
-    data.reduce(function(a, b) {
-      //console.log('a:' + a + ', b.score: ' + b.score + ', b.weight: ' + b.weight);
-      return a + (b.score * b.weight); 
-    }, 0) / 
-    data.reduce(function(a, b) { 
-      return a + b.weight; 
-    }, 0);
+    "hello";
 
   svg.append("svg:text")
     .attr("class", "aster-score")
-    .attr("dy", ".35em")
+    .attr("dy", ".25em")
+    .attr("fill", "white")
     .attr("text-anchor", "middle") // text-align: right
-    .text(Math.round(score));
+    .text("experience");
 
 });
 

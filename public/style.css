@@ -1,6 +1,6 @@
 html{
-	/*background-color: black;*/
-	color: black;
+	background-color: black;
+	color: white;
 }
 
 .pure-g [class *= "pure-u"] {
@@ -125,7 +125,7 @@ a{
 }*/
 
 text {
-  font: 10px sans-serif;
+  font: 5px sans-serif;
 }
 
 form {
