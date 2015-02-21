@@ -2,8 +2,8 @@ $('.arrow').click(function(){
 location.reload();
 });
 
-var width = 900,
-    height = 900,
+var width = 1000,
+    height = 1000,
     radius = Math.min(width, height) / 2,
     innerRadius = 0.3 * radius;
 
@@ -77,7 +77,7 @@ d3.csv('experience.csv', function(error, data) {
 
   svg.append("svg:text")
     .attr("class", "aster-score")
-    .attr("dy", ".25em")
+    .attr("dy", ".45em")
     .attr("fill", "white")
     .attr("text-anchor", "middle") // text-align: right
     .text("Skills");
