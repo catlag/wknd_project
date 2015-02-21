@@ -1,5 +1,7 @@
+$('.arrow').click(function(){
+location.reload();
+});
 
-// $(window).load(function(){
 var width = 900,
     height = 900,
     radius = Math.min(width, height) / 2,
@@ -13,7 +15,7 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([0, 0])
   .html(function(d) {
-    return d.data.label + ": <span style='color:orangered'>" + d.data.score + "</span>";
+    return d.data.label + ": <span style='color:orangered'> " + d.data.score + "</span>";
   });
 
 var arc = d3.svg.arc()
@@ -78,7 +80,7 @@ d3.csv('experience.csv', function(error, data) {
     .attr("dy", ".25em")
     .attr("fill", "white")
     .attr("text-anchor", "middle") // text-align: right
-    .text("experience");
+    .text("Skills");
 
 });
 

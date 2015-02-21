@@ -97,8 +97,8 @@ projects = function(){
 		type: "GET",
 		dataType: "html",
 		success: function(data){
-			$("#box4, #box5, #box6").addClass('animated fadeOut')
-			$("body").replaceWith(data);
+			$("#box4, #box5, #box6").addClass('animated fadeOut');
+			$("#text").replaceWith(data);
 			
 		}
 	});
@@ -111,9 +111,16 @@ aboutMe = function(){
 		dataType: "html",
 		success: function(data){
 			$("#box1").addClass('animated fadeOut');
-			$("body").replaceWith(data);
+			$("#text").replaceWith(data);
 		}
-	});
+	}).done(function(){
+		$.getScript("js/about-me.js", function(data, status, jqxhr){
+					// console.log( data ); // Data returned
+				  console.log( jqxhr.status ); // 200
+				  console.log( "Load was performed." );
+				});
+			}
+	);
 };
 
 contact = function(){
@@ -123,7 +130,7 @@ contact = function(){
 		dataType: "html",
 		success: function(data){
 			$("#box7, #box8").addClass('animated fadeOut');
-			$("body").replaceWith(data);
+			$("#text").replaceWith(data);
 		}
 	});
 };
