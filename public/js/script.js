@@ -101,6 +101,10 @@ projects = function(){
 			$("#text").replaceWith(data);
 			
 		}
+	}).done(function(){
+		$.getScript("js/projects.js", function(data, status, jqxhr){
+			console.log("Load was performed");
+		});
 	});
 };
 	
